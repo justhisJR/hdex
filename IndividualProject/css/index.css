@@ -1,0 +1,619 @@
+body {
+    min-width: 1480px;
+    background-color: #fff;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+.wrap {
+    min-width: 800px;
+    position: relative;
+    margin: 0 auto;
+}
+/*Top_banner 시작*/
+.top_banner {
+    width: 100%;
+    position: relative;
+    z-index: 90;
+    text-align: center;
+}
+.event_top {
+    cursor: pointer;
+}
+.event_top img {
+    width: 100%;
+    vertical-align: top;
+}
+/*Top_banner 종료*/
+/*Header 시작*/
+.header {
+    position: relative;
+    z-index: 99;
+    top: 0;
+    height: 60px;
+    transition: all 0.3s;
+}
+.cate_section {
+    position: absolute;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    height: 100%;
+    margin: 0 auto;
+    background: white;
+    line-height: 25px;
+}
+.contents {
+    display: flex;
+    position: relative;
+    text-align: center;
+    margin: 0 auto;
+    height: 60px;
+    max-width: 1400px;
+}
+.logo_section {
+    display: inline-block;
+    margin-left: 10px;
+}
+.logo_show {
+    position: absolute;
+    top: 10px;
+    left: 70px;
+}
+.logo_show:hover > a > img {
+    opacity: 0.7;
+}
+/* menu section 시작*/
+.menu_section {
+    width: 800px;
+    margin: 0 auto;
+}
+/* 1차 메뉴 */
+.top_menu {
+    position: relative;
+    top: 5px;
+}
+/* 100 / 8 = 12.5 */
+.top_menu > li {
+    width: 12.5%; height: 48px;
+    float: left;
+    text-align: center;
+    display: table;
+}
+.top_menu > li > a{
+    font-weight: bold;
+    display: table-cell;
+    vertical-align: middle;
+    transition: all 0.4s;
+}
+.top_menu > li > a:hover,
+.top_menu > li > a:focus,
+.top_menu > li > a.on{
+    background-color: darkslategray;
+    color: #fff;
+}
+/* 2차메뉴 width 설정, menusection의 width가 800px 800/8은 100px*/
+.top_menu > li > ul {
+    background-color: #fff;
+    padding: 5px;
+    position: absolute;
+    left: 0;
+    top: 48px;
+    width: 100px;
+}
+/* 2차 메뉴 배치 */
+.top_menu li.nav1 ul {
+    left: 0;
+}
+.top_menu li.nav2 ul {
+    left: 12.5%;
+}
+.top_menu li.nav3 ul {
+    left: 25%;
+}
+.top_menu li.nav4 ul {
+    left: 37.5%;
+}
+.top_menu li.nav5 ul {
+    left: 50%;
+}
+.top_menu li.nav6 ul {
+    left: 62.5%;
+}
+.top_menu li.nav7 ul {
+    left: 75%;
+}
+.top_menu li.nav8 ul {
+    left: 87.5%;
+}
+.top_menu li > ul > li {
+    padding: 0 10px;
+}
+.top_menu li > ul > li > a {
+    display: block;
+    padding: 8px 0;
+    font-weight: bold;
+    font-size: 0.7em;
+    border-bottom: 1px solid #ccc;
+}
+.top_menu li > ul > li > a:hover,
+.top_menu li > ul > li > a:focus {
+    color: cadetblue;
+}
+/* menu section 종료*/
+/* my info 시작*/
+.rightCategory {
+    position: absolute;
+    top: 10px;
+    right: 70px;
+}
+.rightCategory > ul > li {
+    float: left;
+    padding: 10px 10px;
+}
+/* my info 종료*/
+
+/*Header 종료*/
+
+/*imageSlide_section 시작*/
+.slide_wrapper {
+    background: #fff;
+    height: 650px;
+    min-width: 960px;
+    overflow: hidden;
+    position: relative;
+}
+.slide_slides {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.slide_slides a {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center; 
+    /*앵커안에 이미지를 가운데 있게 하려면 text-align 센터로 줘야한다*/
+}
+
+.slideShow_nav a {
+    width: 71px;
+    height: 71px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    /*text-indent: -9999em;*/
+    /*앵커 안에 글씨는 멀리 보내버린다...*/
+}
+
+.slideShow_nav a.disabled {
+    display: none;
+    /*disabled가 생기면 비활성화*/
+}
+
+.slideShow_nav > .prev > img {
+    width: 50px;
+    height: 50px;
+}
+.slideShow_nav > .next > img {
+    width: 50px;
+    height: 50px;
+}
+.slideShow_nav > .prev {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    margin-left: -480px;
+}
+.slideShow_nav > .next {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    margin-left: 409px;
+}
+
+/*indicator에 포지션을 주면*/
+.indicator {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    /*text-align: center; 앵커를 글씨 취급해서 가운데 있게 할 수 있다.
+    하지만 a에 단어취급하여 공백이 생기기 때문에 정확하게 맞추려면 마진이 필요하지만
+    display: flex로 하고 요소들을 가운데 두는 justify-content로 센터에 오게 한다. 
+    */
+}
+
+.indicator a{ 
+    width: 35px;
+    height: 35px;
+    margin: 0 5px;
+    background: url(images/highClassImageSlide/buttons.png) no-repeat -280px -170px;
+    text-indent: -9999em;
+
+}
+.indicator a.active {
+    background-position: -334px -170px;
+}
+/*imageSlide_section 종료*/
+
+/*slidetextbox 시작*/
+.slidetextbox {
+    position: absolute;
+    color: #fff;
+}
+.slidetextbox1 {
+    top: 500px;
+    left: 550px;
+}
+.slidetextbox1 > span{
+    font-size: 1.9em;
+    line-height: 50px;
+    font-weight: bold;
+}
+.slidetextbox2 {
+    top: 500px;
+    left: 300px;
+}
+.slidetextbox2 > span{
+    font-size: 1.9em;
+    line-height: 50px;
+    font-weight: bold;
+}
+.slidetextbox3 {
+    top:500px;
+    left: 550px;
+}
+.slidetextbox3 > span{
+    font-size: 1.9em;
+    line-height: 50px;
+    font-weight: bold;
+}
+/*slidetextbox 종료*/
+
+/*content 시작*/
+.content {
+    position: relative;
+    width: 1243px;
+    height: auto;
+    margin: 100px auto;
+}
+.content img {
+    display: flex;
+    width: 617px;
+    height: 479px;
+}
+
+.top_content {
+    display: flex;
+    width: 1234px;
+    height: 479px;
+    margin-bottom: 12px;
+}
+.top_content a:not(:last-child),
+.bottom_content a:not(:last-child) {
+    margin: 0 10px 0 0;
+}
+
+.bottom_content {
+    display: flex;
+    width: 1234px;
+    height: 479px;
+}
+/*content 종료*/
+/*content_clothes 시작*/
+.content_clothes {
+    position: relative;
+    display: flex;
+    width: 1220px;
+    height: 510px;
+    margin: 100px auto;
+}
+.clothes_box1, 
+.clothes_box2,
+.clothes_box3{
+    position: relative;
+    overflow: hidden;
+    width: 400px;
+    height: 510px;
+}
+.clothes_box1, 
+.clothes_box2 {
+    margin: 0 10px 0 0;
+}
+
+.clothes_box1 > a, 
+.clothes_box2 > a,
+.clothes_box3 > a{
+    display: block;
+    background: #ccc;
+}
+.clothes_text {
+    position: absolute;
+    left: 30px;
+    bottom: 60px;
+    color: #fff;
+}
+.content_clothes img:hover {
+    transition: all 0.5s;
+    transform: scale(1.1, 1.1);
+}
+.small_span {
+    font-size: 0.9em;
+    font-weight: bold;
+}
+.big_span {
+    font-size: 1.5em;
+    font-weight: bold;
+    line-height: 50px;
+}
+/*content_clothes 종료*/
+
+/*video_section 시작*/
+.video_section {
+    position: relative;
+    width: 1000px;
+    height: 600px;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+/*video_section 종료*/
+/*weekly best 시작*/
+.weeklyBest_section {
+    position: relative;
+    width: 1127px;
+    height: 600px;
+    margin: 200px auto;
+}
+.weeklyBest_container {
+    position: relative;
+    width: 1127px;
+    height: 714px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.weeklyBest_wrapper {
+    position: absolute;
+    display: flex;
+    width: 3401px;
+    height: 700px;
+}
+.weeklyBest {
+    position: relative;
+    width: 400px;
+    height: 594px;
+}
+.weeklyBest img:hover {
+    transition: all 0.5s;
+    transform: scale(1.1, 1.1);
+}
+.weeklyBest:not(:last-child) {
+    margin-left: 10px;
+}
+.weeklyBest > a {
+    display: block;
+    overflow: hidden;
+    background-color: #ccc;
+}
+.weeklyBest > a img {
+    width: 369px;
+    height: 594px;
+}
+.weeklyBest_text {
+    position: absolute;
+    top: 600px;
+    width: 369px;
+    height: 120px;
+    line-height: 20px;
+}
+.weeklyBest .review_span {
+    color: #CC3D3D;
+    font-weight: bold;
+    font-size: 1.0em;
+}
+.weeklyBest .review_title_span {
+    color: black;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+.weeklyBest p {
+    font-weight: bold;
+    font-size: 0.9em;
+    color: #3163C9;
+}
+
+/*weekly best 종료*/
+/*powermuscle 시작*/
+.powermuscle_section {
+    position: relative;
+    width: 1260px;
+    height: 700px;
+    margin: 0 auto;
+}
+.powermuscle_image {
+    position: relative;
+}
+/*powermuscle 종료*/
+/*sport_section 시작*/
+.sport_section {
+    position: relative;
+    width: 1234px;
+    height: 1400px;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+.sport_top {
+    position: relative;
+    display: flex;
+    width: 1234px;
+    height: 700px;
+}
+.sport_bottom {
+    position: relative;
+    display: flex;
+    width: 1234px;
+    height: 700px;
+}
+.sport {
+    position: relative;
+    width: 301px;
+    height: 700px;
+    margin-left: 10px;
+}
+.sport a {
+    display: block;
+    overflow: hidden;
+}
+.sport a:hover img {
+    transition: all 0.5s;
+    transform: scale(1.1, 1.1);
+}
+.sport a > img {
+    width: 301px;
+    height: 451px;
+}
+.sport_text {
+    margin-top: 10px;
+    position: absolute;
+    width: 369px;
+    height: 120px;
+}
+.sport_text .review_span {
+    color: #CC3D3D;
+    font-weight: bold;
+    font-size: 1.0em;
+}
+.sport_text .review_title_span {
+    color: black;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+.sport_text p {
+    position: absolute;
+    top: 70px;
+    font-weight: bold;
+    font-size: 0.9em;
+    color: #3163C9;
+}
+/*sport_section 종료*/
+/*ifbb_section 시작*/
+.ifbb_section {
+    position: relative;
+    width: 1260px;
+    height: 700px;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+/*ifbb_section 종료*/
+/* footer 시작*/
+.footer {
+    position: relative;
+    min-width: 1480px;
+    height: 300px;
+    background-color: #000;
+    margin-top: 100px;
+}
+.footer_inner {
+    position: relative;
+    display: flex;
+    margin: 0 auto;
+}
+.footer_sec1 {
+    color: rgba(255, 255, 255, 0.5);
+    margin: auto;
+    margin-top: 30px;
+    width: 600px;
+    height: 200px;
+}
+.footer_sec1 span {
+    display: block;
+}
+.footer_sec1 .copyright {
+    display: block;
+    margin-top: 100px;
+}
+.footer_sec2 {
+    color: rgba(255, 255, 255, 0.5);
+    margin: auto;
+    margin-top: 30px;
+    width: 200px;
+    height: 200px;
+}
+.footer_sec2 span {
+    display: block;
+}
+.footer_sec3 {
+    color: rgba(255, 255, 255, 0.5);
+    margin: auto;
+    margin-top: 30px;
+    width: 300px;
+    height: 200px;
+}
+.footer_sec3 span > a {
+    display: block;
+    color: rgba(255, 255, 255, 0.5);
+}
+.footer_sec4 {
+    position: absolute;
+    right: 250px;
+    bottom: 0;
+}
+.footer_sec4 > .asc li {
+    float: left;
+    margin-left: 10px;
+}
+.footer_sec4 > .asc {
+    
+}
+
+
+
+/* footer 종료*/
+/*fix_section 시작*/
+.fix_section {
+    position: fixed;
+    width: 40px;
+    height: 80px;
+    z-index: 100;
+    right: 5%;
+    bottom: 15%;
+    cursor: pointer;
+}
+.fix_section img {
+    width: 40px;
+    height: 40px;
+}
+.fix_scroll {
+    width: 40px;
+    height: 80px;
+}
+.fix_scroll > .fix_scrollUp {
+    display: block;
+    background: url(../images/scroll.png) no-repeat 0 0;
+    width: 40px;
+    height: 40px;
+}
+.fix_scrollUp:hover {
+    opacity: 0.7;
+}
+.fix_scrollDown:hover {
+    opacity: 0.7;
+}
+.fix_scroll > .fix_scrollDown {
+    display: block;
+    background: url(../images/scroll.png) no-repeat 0 -40px;
+    width: 40px;
+    height: 40px;
+}
+/*fix_section 종료*/
+
+/*section_title*/
+.section_title {
+    font-size: 1.8em;
+    font-weight: 200;
+    margin-bottom: 20px;
+}
